@@ -10,7 +10,7 @@ function countAnimals(animal) {
     return animals;
   }
   const quantAnimal = species.find((quant) => quant.name === animal.specie).residents;
-  //Fonte Object.keys https://stackoverflow.com/questions/5223/length-of-a-javascript-object
+  // Fonte Object.keys https://stackoverflow.com/questions/5223/length-of-a-javascript-object
   if (Object.keys(animal).length === 1) {
     return quantAnimal.length;
   }
