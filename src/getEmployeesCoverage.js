@@ -32,15 +32,13 @@ function validation(input) {
 
 function getEmployeesCoverage(search) {
   if (!search) return emp;
-  const input = Object.values(search)[0];
-  const result = validation(input);
-  if (result === undefined) {
-    throw new Error('Informações inválidas');
-  } else {
+  if (employees.some((item) => item.firstName === search.name
+  || item.lastName === search.name || item.id === search.id)) {
+    const input = Object.values(search)[0];
+    const result = validation(input);
     return result;
   }
+  throw new Error('Informações inválidas');
 }
 
 module.exports = getEmployeesCoverage;
-
-// getEmployeesCoverage({ name: 'Sharoanda' });
